@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jszip.min.js"></script>
+  <script src="js/pptxjs.min.js"></script>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      margin: 0;
+      padding: 12px;
+      font-family: sans-serif;
+      color: #ffffff;
+    }
+    #slide-container {
+      width: 100%;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .slide {
+      background: #ffffff;
+      color: #000000;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      padding: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="slide-container">
+    <div style="text-align:center; padding-top: 40px; color: #aaaaaa;">Loading presentation slides...</div>
+  </div>
+  <script>
+    function setDarkMode(dark) {
+      document.body.style.backgroundColor = dark ? '#1a1a1a' : '#1e1e1e';
+    }
+
+    function goToSlideExternal(pageNumber) {
+      if (typeof window.goToSlide === 'function') {
+        window.goToSlide(Math.max(0, pageNumber - 1));
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+
+    function loadPptxFromBase64(base64Data) {
+      try {
+        if (typeof PptxRenderer !== 'undefined' && typeof PptxRenderer.renderSlides === 'function') {
+          PptxRenderer.renderSlides(base64Data, document.getElementById('slide-container'));
+        } else {
+          throw new Error('PptxRenderer.renderSlides is not available');
+        }
+      } catch (e) {
+        document.getElementById('slide-container').innerHTML = '<p style="color:red;">Error loading PPTX file: ' + e.message + '</p>';
+      }
+    }
+  </script>
+</body>
+</html>

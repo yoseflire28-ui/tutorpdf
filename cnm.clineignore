@@ -1,0 +1,11 @@
+# Exclude heavy Flutter build artifacts
+build/
+.dart_tool/
+.git/
+.idea/
+
+# Exclude large binary assets
+*.png
+*.jpg
+*.jpeg
+*.pdf

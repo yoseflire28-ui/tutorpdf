@@ -1,0 +1,88 @@
+name: tutorpdf
+description: TutorPDF – Smart document reader and AI learning platform.
+publish_to: "none"
+version: 1.0.0+2
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sqflite: ^2.3.2
+  path: ^1.9.0
+  path_provider: ^2.1.2
+  file_picker: ^8.0.3
+  fl_chart: ^0.68.0
+  shared_preferences: ^2.2.3
+  flutter_secure_storage: ^9.2.2
+  archive: ^3.6.1
+  intl: ^0.19.0
+  provider: ^6.1.2
+  http: ^1.2.1
+  uuid: ^4.4.0
+  crypto: ^3.0.3
+  flutter_highlight: ^0.7.0
+  syncfusion_flutter_pdfviewer: ^31.1.21
+  syncfusion_flutter_pdf: ^31.1.21
+  pdf: ^3.12.0
+  image: ^4.0.21
+  share_plus: ^12.0.2
+  printing: ^5.12.0
+  wakelock_plus: ^1.2.5
+  screen_brightness: ^2.1.0
+  connectivity_plus: ^6.0.5
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  cloud_firestore: ^5.4.4
+  firebase_app_check: ^0.3.2+10
+  google_sign_in: ^6.2.1
+  # Multi-format document support
+  excel: ^4.0.3
+  csv: ^6.0.0
+  docx_to_text: ^1.0.0
+  open_filex: ^4.4.0
+  xml: ^6.6.1
+  permission_handler: ^11.2.0
+  device_info_plus: ^12.4.0
+  webview_flutter: ^4.10.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: Calibri
+      fonts:
+        - asset: assets/fonts/Calibri.ttf
+    - family: TimesNewRoman
+      fonts:
+        - asset: assets/fonts/TimesNewRoman.ttf
+    - family: Arial
+      fonts:
+        - asset: assets/fonts/Arial.ttf
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#1E1E1E"
+  adaptive_icon_foreground: "assets/images/app_icon.png"
+  web:
+    generate: false
+
+flutter_native_splash:
+  color: "#1E1E1E"
+  color_dark: "#1E1E1E"
+  android_12:
+    color: "#1E1E1E"
